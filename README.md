@@ -44,4 +44,7 @@ Support is peer-to-peer and best effort. Support is not guaranteed and is offere
 
 ### [BNDDOScripts Discord](https://discord.com/invite/HwH28T8ffd)
 
+## Buy Me Coffee
+https://ko-fi.com/b_n
+
 
