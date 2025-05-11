@@ -1,0 +1,25 @@
+<0.0.1> 
+Medical System - Version 0.0.1
+- Modular condition system with support for custom effects like bleeding, poisoning, etc.
+- Condition configuration includes damage per tick, temporary or permanent status, screen effects, effect priority, and blocking logic.
+- Medical items configurable via item definitions with support for:
+  - Treating (temporarily suppressing) conditions
+  - Curing (permanently removing) conditions
+  - Self-treatment (selfTreat flag)
+  - Self-curing (selfCure flag)
+  - Doctor-only usage (requiresDoctor flag with requiredJobGrade)
+  - Treatment duration with progress bar (treatmentTime)
+  - Doctor treatment speed modifier (doctorTreatmentTimeMultiplier)
+- Supports using medical items on nearby players or self if allowed by item config.
+- Automatically selects closest player within 1.5 units; falls back to self if none are nearby.
+- Prevents using items when no matching conditions are found or if config flags block the action.
+- Prevents treating and curing the same condition at the same time; will prioritize treatment.
+- Validates conditions before applying effects to avoid invalid or ineffective treatments.
+- Suppression time system allows for temporary relief from conditions (e.g., bandage stops bleeding for X seconds).
+- Supports configuration of preventIf and ignoreIf conditions to block or nullify effects based on other active conditions.
+- Uses screenEffect and effectPriority to visually represent active conditions.
+- All condition and item logic designed to be modular and easily extendable.
+- Clean separation of targeting logic (finding players) and condition logic (treat/cure flow).
+- Uses callback-based getClosestPlayer function to support async-friendly proximity checks.
+- LocalPlayer.state used for job validation and permission handling.
+- Fully readable and maintainable code, designed for expansion (e.g., third-eye targeting, NPC healing).
